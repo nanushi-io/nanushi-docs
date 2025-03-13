@@ -1,190 +1,144 @@
 # Technical Resources
 
-## React Native Fundamentals
+## React Native Fundamentals (2024)
 
 ### Official Resources
 - [React Native Documentation](https://reactnative.dev/docs/getting-started)
-- [React Native GitHub](https://github.com/facebook/react-native)
 - [React Native Blog](https://reactnative.dev/blog)
-- [React Native Community](https://github.com/react-native-community)
+- [React Native New Architecture](https://reactnative.dev/docs/the-new-architecture/landing-page)
+- [React Native GitHub](https://github.com/facebook/react-native)
 
-### Learning Paths
-1. **Beginner**
-   - [React Native Express](https://www.reactnative.express/) - Modern guide to React Native
-   - [React Native Paper](https://callstack.github.io/react-native-paper/) - Material Design components
-   - [React Navigation](https://reactnavigation.org/) - Routing and navigation
-   - [TypeScript in React Native](https://reactnative.dev/docs/typescript)
+### Core Technologies
+1. **Framework Essentials**
+   - [Expo SDK](https://docs.expo.dev/) - Development platform and tools
+   - [Expo Router](https://docs.expo.dev/router/introduction/) - File-based routing
+   - [React Navigation](https://reactnavigation.org/) - Navigation library
+   - [TypeScript Guide](https://reactnative.dev/docs/typescript)
 
-2. **Intermediate**
+2. **UI & Design**
+   - [React Native Paper](https://callstack.github.io/react-native-paper/) - Material Design
+   - [NativeBase](https://nativebase.io/) - Accessible components
+   - [React Native Skia](https://shopify.github.io/react-native-skia/) - 2D graphics
    - [React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/) - Animations
-   - [React Native Gesture Handler](https://docs.swmansion.com/react-native-gesture-handler/) - Native gestures
-   - [React Query](https://tanstack.com/query/latest) - Data fetching & caching
-   - [Zustand](https://zustand-demo.pmnd.rs/) - State management
 
-3. **Advanced**
-   - [React Native Performance](https://reactnative.dev/docs/performance)
-   - [Native Modules](https://reactnative.dev/docs/native-modules-intro)
-   - [Hermes Engine](https://reactnative.dev/docs/hermes)
-   - [App Security](https://reactnative.dev/docs/security)
+3. **State Management**
+   - [Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction) - Simple state management
+   - [TanStack Query](https://tanstack.com/query/latest) - Server state management
+   - [Redux Toolkit](https://redux-toolkit.js.org/) - Complex state management
 
-## Development Tools
+## Development Setup
 
 ### Essential Tools
-1. **Code Editor**
-   - [VS Code](https://code.visualstudio.com/) with extensions:
-     - React Native Tools
-     - ESLint
-     - Prettier
-     - GitLens
-     - Error Lens
+1. **Required Software**
+   ```bash
+   # Node.js (LTS version)
+   # Watchman
+   # Xcode (iOS)
+   # Android Studio (Android)
+   # VS Code
+   ```
 
-2. **Development Environment**
-   - [Node.js](https://nodejs.org/) (LTS version)
-   - [Watchman](https://facebook.github.io/watchman/)
-   - [Xcode](https://developer.apple.com/xcode/) (for iOS)
-   - [Android Studio](https://developer.android.com/studio) (for Android)
+2. **VS Code Extensions**
+   - [React Native Tools](https://marketplace.visualstudio.com/items?itemName=msjsdiag.vscode-react-native)
+   - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+   - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+   - [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
 
-3. **Testing Tools**
-   - [Jest](https://jestjs.io/)
-   - [React Native Testing Library](https://callstack.github.io/react-native-testing-library/)
-   - [Detox](https://wix.github.io/Detox/) for E2E testing
+3. **Project Setup**
+   ```bash
+   # Create new project
+   npx create-expo-app@latest my-app
+   
+   # Or with custom template
+   npx create-expo-app@latest my-app --template with-router
+   ```
 
 ### Recommended Libraries
 
-1. **UI Components**
-   - [React Native Elements](https://reactnativeelements.com/)
-   - [NativeBase](https://nativebase.io/)
-   - [React Native Vector Icons](https://github.com/oblador/react-native-vector-icons)
-   - [React Native SVG](https://github.com/react-native-svg/react-native-svg)
+| Category | Library | Version | Purpose |
+|----------|---------|---------|----------|
+| UI | react-native-paper | ^5.0.0 | Material Design |
+| Navigation | @react-navigation/native | ^6.0.0 | Routing |
+| State | zustand | ^4.0.0 | State management |
+| Testing | jest | ^29.0.0 | Unit testing |
 
-2. **Data Management**
-   - [AsyncStorage](https://react-native-async-storage.github.io/async-storage/)
-   - [Realm](https://realm.io/docs/react-native/latest/)
-   - [WatermelonDB](https://nozbe.github.io/WatermelonDB/)
+## Project Architecture
 
-3. **Development Tools**
-   - [Flipper](https://fbflipper.com/) - Debugging
-   - [React Native Debugger](https://github.com/jhen0409/react-native-debugger)
-   - [reactotron](https://github.com/infinitered/reactotron)
+### Folder Structure
+```bash
+src/
+├── components/
+│   ├── atoms/        # Basic components
+│   ├── molecules/    # Composite components
+│   └── organisms/    # Complex components
+├── features/         # Feature-based modules
+├── navigation/       # Navigation setup
+├── services/        # API and external services
+├── hooks/           # Custom hooks
+├── utils/           # Helper functions
+├── theme/           # Design system
+└── types/           # TypeScript definitions
+```
 
-## Best Practices & Patterns
+### Best Practices
+1. **Performance**
+   - Use [Flipper](https://fbflipper.com/) for debugging
+   - Implement [React Native Performance](https://reactnative.dev/docs/performance)
+   - Monitor with [Performance Monitor](https://reactnative.dev/docs/performance#performance-monitor)
 
-### Architecture
-1. **Project Structure**
-   ```
-   src/
-   ├── components/
-   │   ├── atoms/
-   │   ├── molecules/
-   │   └── organisms/
-   ├── screens/
-   ├── navigation/
-   ├── services/
-   ├── hooks/
-   ├── utils/
-   └── types/
-   ```
+2. **Testing**
+   - [Jest](https://jestjs.io/) for unit testing
+   - [React Native Testing Library](https://callstack.github.io/react-native-testing-library/)
+   - [Detox](https://wix.github.io/Detox/) for E2E testing
 
-2. **State Management**
-   - Local state with useState
-   - Complex state with Zustand
-   - Server state with React Query
-   - Persistence with AsyncStorage
+3. **Security**
+   - [Security Guidelines](https://reactnative.dev/docs/security)
+   - [Expo Security](https://docs.expo.dev/guides/security/)
 
-3. **Navigation Patterns**
-   - Stack navigation
-   - Tab navigation
-   - Drawer navigation
-   - Modal navigation
-   - Deep linking
+## Latest Features (2024)
 
-### Performance Optimization
-1. **Render Optimization**
-   - useCallback & useMemo
-   - React.memo
-   - VirtualizedList
-   - Image optimization
+### New Architecture
+- [Fabric Renderer](https://reactnative.dev/architecture/fabric-renderer)
+- [TurboModules](https://reactnative.dev/docs/the-new-architecture/turbommodules)
+- [Codegen](https://reactnative.dev/docs/the-new-architecture/pillars-codegen)
 
-2. **Memory Management**
-   - Proper cleanup in useEffect
-   - Image caching
-   - Memory leak prevention
-   - Background task management
+### Development Tools
+- [Expo EAS](https://docs.expo.dev/eas/) - Build and deploy
+- [Expo Updates](https://docs.expo.dev/eas-update/introduction/) - OTA updates
+- [Metro Bundler](https://facebook.github.io/metro/) - JavaScript bundler
 
-## Latest Trends & Updates
+## Learning Resources
 
-### Current Trends (2024)
-1. **Architecture**
-   - [React Native New Architecture](https://reactnative.dev/docs/the-new-architecture/landing-page)
-   - [Fabric Renderer](https://reactnative.dev/architecture/fabric-renderer)
-   - [TurboModules](https://reactnative.dev/docs/the-new-architecture/turbommodules)
-
-2. **Development**
-   - [React Native Skia](https://shopify.github.io/react-native-skia/)
-   - [React Native Web](https://necolas.github.io/react-native-web/)
-   - [Expo Updates](https://docs.expo.dev/eas-update/introduction/)
-
-3. **Tools**
-   - [Expo Application Services](https://expo.dev/eas)
-   - [React Native CLI](https://github.com/react-native-community/cli)
-   - [Metro Bundler](https://facebook.github.io/metro/)
+### Official Channels
+- [React Native YouTube](https://www.youtube.com/@ReactNative)
+- [Expo YouTube](https://www.youtube.com/@expo)
+- [React Native Blog](https://reactnative.dev/blog)
 
 ### Community Resources
-1. **Newsletters**
-   - [React Native Newsletter](https://reactnativenewsletter.com/)
-   - [This Week In React](https://thisweekinreact.com/)
-   - [React Native Now](https://reactnativenow.com/)
+- [React Native Directory](https://reactnative.directory/) - Package discovery
+- [React Native Community](https://github.com/react-native-community)
+- [Expo Forums](https://forums.expo.dev/)
 
-2. **YouTube Channels**
-   - [William Candillon](https://www.youtube.com/@wcandillon)
-   - [React Native School](https://www.youtube.com/@ReactNativeSchool)
-   - [Expo](https://www.youtube.com/@expo)
+### Newsletters
+- [React Native Newsletter](https://reactnativenewsletter.com/)
+- [This Week In React](https://thisweekinreact.com/)
 
-3. **Blogs & Tutorials**
-   - [Infinite Red Blog](https://infinite.red/blog)
-   - [Callstack Blog](https://callstack.com/blog/)
-   - [React Native Radio](https://reactnativeradio.com/)
-
-## Troubleshooting Guide
+## Troubleshooting
 
 ### Common Issues
-1. **Build Issues**
-   - iOS build failures
-   - Android gradle issues
-   - Metro bundler problems
-   - Dependencies conflicts
+1. **Build Problems**
+   - [iOS Build Issues](https://reactnative.dev/docs/troubleshooting#ios-build-errors)
+   - [Android Build Issues](https://reactnative.dev/docs/troubleshooting#android-build-errors)
+   - [Metro Bundler Issues](https://reactnative.dev/docs/troubleshooting#metro-bundler-issues)
 
-2. **Performance Issues**
-   - Slow rendering
-   - Memory leaks
-   - Animation jank
-   - Bridge bottlenecks
+2. **Development Tools**
+   - [React Native Debugger](https://github.com/jhen0409/react-native-debugger)
+   - [Flipper](https://fbflipper.com/)
+   - [Chrome DevTools](https://reactnative.dev/docs/debugging#chrome-developer-tools)
 
-3. **Development Issues**
-   - Hot reload problems
-   - Debugger connection
-   - Device/Simulator issues
-   - Native module linking
+### Support Channels
+- [GitHub Issues](https://github.com/facebook/react-native/issues)
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/react-native)
+- [Expo Forums](https://forums.expo.dev/)
 
-### Debug Tools
-1. **React Native Debugger**
-2. **Chrome DevTools**
-3. **Flipper Plugins**
-4. **Metro Bundler**
-
-## Additional Resources
-
-### Books
-- "React Native in Action" by Nader Dabit
-- "Fullstack React Native" by Devin Abbott
-- "Learning React Native" by Bonnie Eisenman
-
-### Courses
-- [React Native - The Practical Guide](https://www.udemy.com/course/react-native-the-practical-guide/)
-- [Complete React Native + Hooks Course](https://www.udemy.com/course/the-complete-react-native-and-redux-course/)
-- [React Native Master Class](https://start-react-native.dev/)
-
-### Communities
-- [React Native Discord](https://discord.gg/reactnative)
-- [Reactiflux Discord](https://discord.gg/reactiflux)
-- [React Native Forum](https://forums.expo.dev/)
+_Last updated: March 2024_
